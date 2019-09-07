@@ -45,13 +45,13 @@ public class ClickEvent implements Listener {
                             FightManager fightManager = Practice.getInstance().fight.get(current.getItemMeta().getDisplayName());
                             if (fightManager.getQueue(FightType.NORMAL) == 1) {
                                 // TODO start match
-                                player.sendMessage("An opponent was found!");
+                                player.sendMessage("§6An opponent was found!");
                                 new MatchManager(MatchType.DUEL, fightManager.getQueuePlayer().get(FightType.NORMAL), player.getUniqueId(), FightType.NORMAL, current.getItemMeta().getDisplayName());
                             } else {
                                 playerManager.queue(current.getItemMeta().getDisplayName(), FightType.NORMAL);
                                 playerManager.setPlayerSatus(PlayerSatus.QUEUE);
                                 playerManager.sendKit(Practice.getInstance().queueKit);
-                                player.sendMessage("You are added to the queue");
+                                player.sendMessage("§eYou are added to the queue");
                             }
                         }
                     } else if(inventory.getName().equals("§6Duel"))
